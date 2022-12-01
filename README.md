@@ -104,9 +104,9 @@ These defaults can be overridden when agreed by both counterparties.
 **Security**
 
 The exact issue being traded must be recorded. Many bonds may have almost identical details (e.g., World Bank).
-    - issuer
-    - coupon rate
-    - maturity date
+- issuer
+- coupon rate
+- maturity date
 
 Every unique security has an ISIN.
 
