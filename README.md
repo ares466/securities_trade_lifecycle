@@ -59,3 +59,91 @@ When an order is received by the broker, it acts as an agent or principal.
 - **Principal**: broker trades off of trading book, thereby increasing/decreasing its current position for that security
 
 ## Trade Capture
+
+Trade capture is the process of formally recording details of an individual trade execution.
+
+The trader must record trade details within the front office trading system, namely:
+- dates
+- buy or sell
+- quantity
+- security
+- market
+- price
+- internal owner
+- counterparty
+
+**Dates**
+
+- trade date: the date the trade was executed
+- trade time: regulatory requirement to record HH/MM
+- value date (contractual settlement date): intended date of settlement (i.e., exchange of securities and cash)
+
+A rolling trade date species a contractual settlement date of:
+```
+CSD = trade date + x    
+    where x = some amount of business days
+```
+
+<img src="./static/trade_date.png" />
+
+*Table Caption (below): Default CSD per security type*
+| Security Type | CSD Offset|
+| --- | --- |
+| US Equity | T+3 |
+| UK Equity | T+3 |
+| UK Equity | T+1 |
+| US Treasury Bonds | T+1 |
+
+These defaults can be overridden when agreed by both counterparties.
+
+**Buy or Sell**  
+**Quantity**
+- Shares: expressed as a number
+- Bond: expressed as a nominal amount
+
+**Security**
+
+The exact issue being traded must be recorded. Many bonds may have almost identical details (e.g., World Bank).
+    - issuer
+    - coupon rate
+    - maturity date
+
+Every unique security has an ISIN.
+
+**Market**
+
+Some securities trade in multiple markets (e.g., NYSE, Frankfurt).
+
+**Price**
+
+Equity prices are captured in price per share (e.g., USD 6.10).
+
+Bond prices are expressed in the percentage of the nominal amount/face value (e.g., 98.25%).
+
+**Internal Owner**
+
+Define the proprietary trader or trading book that executed the trade.
+
+**Counterparty**
+
+The counterparty must record the exact counterparty including its location.
+
+E.g., Trade Capture
+
+| Trade Component | Example |
+| --- | --- |
+| Trade Date | 20th October |
+| Trade Time | 0847 |
+| Value Date | 23rd October |
+| Trading Book | Book T |
+| Buy or Sell | Buy |
+| Quantity | 12,000,000,00 |
+| Security | Xerox Corporation USD 1.00 Common Stock |
+| Price | USD 2.88 Net |
+| Counterparty | Deutsche Bank, London |
+
+Trades should be captured as soon as possible.
+
+A trade record is created within the IBOR system (Internal Book of Record). The trade record will be held as *open* until the settlement date occurs.
+
+Before the settlement date, the investment firm is exposed to counterparty risk.
