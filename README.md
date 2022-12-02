@@ -1,7 +1,10 @@
 # The Security Trade Lifecycle
 
+[Udemy - Securities Trade Lifecycle](https://www.udemy.com/course/the-securities-trade-lifecycle/)
+
 - [Overview](#overview)
 - [Trade Capture](#trade-capture)
+- [Trade Enrichment](#trade-enrichment)
 
 ## Overview
 
@@ -147,3 +150,27 @@ Trades should be captured as soon as possible.
 A trade record is created within the IBOR system (Internal Book of Record). The trade record will be held as *open* until the settlement date occurs.
 
 Before the settlement date, the investment firm is exposed to counterparty risk.
+
+## Trade Enrichment
+
+Trade enrichment is the process of adding essential information to the basic trade details captured previously. The additional essential information is necessary to facilitate full operational processing.
+
+Systems must be preloaded with static security data in order to enrich trade captures based on pre-defined enrichment rules with the Operations system.
+
+<img src="./static/trade_enrichment.png" />
+
+The settlement system must generate a unique trade reference number that can be used to reference the trade.
+
+The settlement system must also generate relevant charges for the trade.
+- e.g., The SEC charges 1/300th of 1% of gross consideration on US equities (payable by seller)
+- e.g., The UK govt charges a stamp duty of 0.5% of gross consideration on UK equities (payable by buyer)
+- e.g., Calculate accrued interest on interest-bearing bonds based on the number of accrued days
+
+*Caption (below): Bonds accrue interest every day, but coupons are only paid periodically. When an interest-bearing bond is sold between coupon dates, the accrued interest must be calculated and considered in the price of a trade.*
+<img src="./static/bond_accrued_interest.png" />
+
+The settlement system must also enrich trades with commission, net settlement value (final cash amount due to/from counterparty), firm's custodian SSI, and counterparty custodian SSI.
+
+The settlement basis desribes how settlement will occur:
+- *delivery versus payment (DVP)* - simultaneous exchange of a security for cash
+- *free of payment (FOP)* - the security can be for given before payment occurs.
