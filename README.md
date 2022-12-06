@@ -197,6 +197,24 @@ Trade confirmations can be issued in many forms:
 
 *Note: MT515 is the SWIFT message type for trade confirmations.*
 
+Electronic Trade Confirmation (ETC) is a market-wide facility that is used to confirm trades. In most cases, using ETC is mandatory by a specified deadline, lest fines be imposed.
+
+Electronic trade matching facilities can be used to facilitate trade confirmation.
+
+*Caption (below): Morgan Stanley and UBS execute a trade with each other. Both investment banks send the trade details to the trade matching facility for confirmation. If details of the trade do not match, the parties are notified.*
+
+<img src="./static/electronic_trade_matching.png" />
+
+*OASYS* is a form of ETC called *trade affirmation*, in which the validation of trade details is sequential.
+
+<img src="./static/oasys.png" />
+
+Discrepencies in trade details may be grouped into economic or non-economic. 
+
+*Economic discrepencies* include details like quantity, price, buy/sell, counterparty, trade date, or value date. These types of trade descrepencies must be fixed by the trader (front office), not operations (back office).
+
+Non-economic discrepencies includes details like brokers. In this case, operations can fix the trade details in the static data without involving traders.
+
 ## Trade Settlement
 
 ## Reconciliation
