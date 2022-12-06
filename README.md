@@ -5,6 +5,9 @@
 - [Overview](#overview)
 - [Trade Capture](#trade-capture)
 - [Trade Enrichment](#trade-enrichment)
+- [Trade Confirmation](#trade-confirmation)
+- [Trade Settlement](#trade-settlement)
+- [Reconciliation](#reconciliation)
 
 ## Overview
 
@@ -174,3 +177,26 @@ The settlement system must also enrich trades with commission, net settlement va
 The settlement basis desribes how settlement will occur:
 - *delivery versus payment (DVP)* - simultaneous exchange of a security for cash
 - *free of payment (FOP)* - the security can be for given before payment occurs.
+
+## Trade Confirmation
+
+A trade confirmation is a formal advice of trading issued to or received from a counterparty for the purpose of confirming trade details.
+
+Trade confirmations reduces risk by serving as a legal defense mechanism against future liabilities. 
+
+If a trade confirmation is not issued, the investment firm jeopardizes relationships with institutional clients due to lack of service. It also introduces a risk of regulatory fines.
+
+Trade confirmations should be issued as soon as possible after trade execution.
+
+Trade confirmations can be issued in many forms:
+- paper (contract notes)
+- telex
+- fax
+- SWIFT (Society for Worldwide Interbank Financial Telecommunications)
+- ETC (Electronic Trade Confirmation)
+
+*Note: MT515 is the SWIFT message type for trade confirmations.*
+
+## Trade Settlement
+
+## Reconciliation
