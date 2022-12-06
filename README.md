@@ -217,4 +217,47 @@ Non-economic discrepencies includes details like brokers. In this case, operatio
 
 ## Trade Settlement
 
+A *settlement instruction* is a message issued by an account holder to a CSD/custodian to execute movements of securities and/or cash in order to settle securities trades.
+
+Settlement instructions are required for money to change hands. If no settlement instructions are issued, trade settlement would fail.
+
+There are three types of settlement instructions:
+- securities vs cash (DvP) 
+- securities only (FoP)
+- cash only (FoP)
+
+DvP occurs 99% of the time.
+
+*Caption (below): E.g., settlement insructions*
+- *Deliver/Receive specifies an instruction of E01. This instruction is always from the perspective of the security.*
+- *The settlement basis is P, which signifies delivery vs payment. This in contrast to code F (free of payment).*
+
+<img src="./static/settlement_instructions.png" width="400" />
+
+Generally, trade settlement instructions deadlines are defined by the exchange, or even depot, associated with the trade.
+
+E.g., Euroclear
+    - 1845 evening prior to value date (if made by Euclid or SWIFT)
+    - 1000 morning prior to value date (if made by telex or fax)
+
+Generally, investment firms try to issue settlement instructions on the trade date.
+
+S.W.I.F.T. supports the following message types for settlement:
+- MT540 (Receive FoP)
+- MT541 (Receive DvP)
+- MT542 (Deliver FoP)
+- MT543 (Deliver DvP)
+
+Alternatively, investment banks may use CSD/custodian proprietary system (e.g., Euclid of Euroclear).
+
+Typically, the operations system (back office) is responsible for issuing settlement instructions to custodians.
+
+There are several risks in the settlment process:
+- Miss the settlement instruction deadline
+- Instructions issued, but not received by depot or nostro
+- Issuing FoP instructions without internal authorization
+    - E.g., selling - potential to deliver securities without equivalent monetary value
+    - E.g., buying - potential to pay cash without equivalent securities value
+- Falsified instructions - securities or cash removed from account at CSD/custodian potentially without limit.
+
 ## Reconciliation
