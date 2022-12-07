@@ -294,4 +294,6 @@ In some markets, rate of successful settlement is 100% due to regulations and pe
 
 Some markets allow for partial settlement when agreed upon by the buyer and seller. In some markets, partial settlment is compulsory. The partial settlement is for a specified number of securities at a pro-rata cash amount. Both parties must resubmit new settlement instructions reflecting the new details of the partial trade.
 
+Once a trade is settlement, internal books of records must be updated based on settlement advices received and unique trade reference numbers.
+
 ## Reconciliation
