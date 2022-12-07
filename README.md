@@ -260,4 +260,38 @@ There are several risks in the settlment process:
     - E.g., buying - potential to pay cash without equivalent securities value
 - Falsified instructions - securities or cash removed from account at CSD/custodian potentially without limit.
 
+*Pre-settlement status* is a condition applied to a settlement instruction by a CSD/custodian reflecting the *matched* status. The status is derived following receipt of a settlement instruction by a CSD/custodian. The custodian will attempt to match the instruction with the counterparty.
+- The **matched** status is applied when all details match perfectly. The cash value can be different and still be considered matching if within a tolerance band (e.g., cash difference of USD12 compared with max tolerance allowance of USD25).
+- The **unmatched** status is applied when differences exist between the instructions from the firm and the counterparty, or instructions are missing from the counterparty.
+- **Advisory/alleged** status is used when instructions are missing from the firm.
+
+*Caption (below): This table shows a matrix of possible settlement instruction status based on scenarios (vertical) in relation to the value date (horizontal).*
+<img src="./static/settlement_instruction_status.png" />
+
+| Statues | |
+| --- | --- |
+| CSET | Counterparty does not have suffient securities |
+| FUT | Matched, waiting for value date |
+| OTH | Counterparty does not have sufficient cash |
+| PROV | Firm does not have sufficient cash |
+| SET | Settled |
+| UNM1 | Unmatched, priority 1 |
+| UNM2 | Unmatched, priority 2 |
+| USEC | Firm does not have sufficient securities |
+
+When a trade is unmatched, the following actions must be taken:
+- Prioritize which trades need attention first (e.g., closest to settlement date, large cash values)
+- Determine nature of the difference and assign ownership (e.g., trader vs operations)
+- Initiate fix with the responsible group
+
+A failed settlement is a trade in which the securities and/or cash have not been exchanged with the counterparty on value date. Despite the failure, both parties are still locked-in to original trade cash values. In other words, settlement is only delayed, not canceled.
+
+When a trade fails, it has negative impacts, including:
+- monetary loss - not recieving cash from buyer as well as cash interest loss.
+- increased exposure to counterparties
+
+In some markets, rate of successful settlement is 100% due to regulations and penalties associated with failed settlements.
+
+Some markets allow for partial settlement when agreed upon by the buyer and seller. In some markets, partial settlment is compulsory. The partial settlement is for a specified number of securities at a pro-rata cash amount. Both parties must resubmit new settlement instructions reflecting the new details of the partial trade.
+
 ## Reconciliation
