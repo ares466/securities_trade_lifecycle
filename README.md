@@ -297,3 +297,27 @@ Some markets allow for partial settlement when agreed upon by the buyer and sell
 Once a trade is settlement, internal books of records must be updated based on settlement advices received and unique trade reference numbers.
 
 ## Reconciliation
+
+Reconciliation is a fundamental and essential control process to verify that internal book of records match. The internal book of records of clients' securities and cash are accurate when compared with custodians' records.
+
+- *FOBO Trades* - Reconcile trades captured in the front-office trading system versus the back-office operational system.
+- *FOBO Position* - Reconcile trading book positions within trading system verses back-end operational system at individual securities position level.
+- *Depot Position* - Reconcile settled securities positions within back-office operational system with custodian statements at individual securities position level.
+- *Nostro Position* - Reconcile settled cash position within accounting system versus custodian statements at account level by currency.
+
+*Caption (below): Example sequence diagram of dimensions of reconciliation with a custodian.*
+
+<img src="./static/reconciliation_custodian.png" />
+
+Reconciliation should occur quickly and regularly. Doing so will quickly identify any errors in internal systems or custodian accounts at the point at which they arose.
+
+Generally, reconciliation is performed by:
+1. Gathering input such as statements (e.g., custodian statements, internal statements).
+2. Identity the point of the last reconciliation (i.e., brought-forward balances).
+3. Reconcile individual movements from that point until the present.
+4. Identify any non-reconciling items.
+5. Investigate and rectify non-reconciling items.
+    - contact apprioriate department (e.g., traders, settlement, corporate actions)
+    - gain agreement over rectifying action
+    - document agreed action
+    - monitor to ensure agreed action is effected
